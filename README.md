@@ -85,9 +85,14 @@ Dog.limit(2)
 Sometimes we only want to return a certain number of records.  When we visit a blog, we aren't shown every post ever written to the blog, but maybe only the most recent handful.  `.limit` allows us to specify a maximum number of records to return (see Figure 8).
 
 
-- `Dog.count`
+### Release 4:  A Count of How Many Records Exist
+```
+Dog.count
+```
+*Figure 9*.  Retrieving a count of records in the dogs table.
 
-  `::count` tells us how many records are in the table.
+In addition to retrieving records from the database, we can also ask an Active Record model to tell us how many records exist in the database with the `.count` method (see Figure 9).
+
  
 - `Dog.pluck(:name, :age)`
 
