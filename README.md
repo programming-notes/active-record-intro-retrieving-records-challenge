@@ -59,7 +59,7 @@ Dog.where(age: 1)
 
 The dogs table will be searched for any records that match our conditions.  The assumption is that there could be more than one, so the `Dog` objects are returned in a collection—even if there is only one match.
   
-```
+```ruby
 Dog.where("age = ? and name like ?", 1, '%Te%')
 ```
 *Figure 6*.  Passing conditions to `.where` as a string.
@@ -68,7 +68,7 @@ Dog.where("age = ? and name like ?", 1, '%Te%')
 
 
 ### Release 2: Getting Dogs in a Certain Order
-```
+```ruby
 Dog.order(age: :desc)
 ```
 *Figure 7*  Ordering dogs by age from oldest to youngest.
@@ -77,7 +77,7 @@ Just as we might not always want to get all the dogs, sometimes we'll want to ge
 
 
 ### Release 3: Limiting the Number of Records Returned
-```
+```ruby
 Dog.limit(2)
 ```
 *Figure 8*.  Limiting the number of records returned to 2.
@@ -86,7 +86,7 @@ Sometimes we only want to return a certain number of records.  When we visit a b
 
 
 ### Release 4:  A Count of How Many Records Exist
-```
+```ruby
 Dog.count
 ```
 *Figure 9*.  Retrieving a count of records in the dogs table.
@@ -95,7 +95,7 @@ In addition to retrieving records from the database, we can also ask an Active R
 
 
 ### Release 5:  Getting Specific Attributes
-```
+```ruby
 Dog.pluck(:name, :age)
 ```
 *Figure 10*.  Retrieving the names and ages of the dogs.
@@ -106,7 +106,7 @@ In the methods that we looked at in earlier releases (e.g., `.all`), each record
 
 
 ### Release 6:  Getting the First Dog
-```
+```ruby
 Dog.first
 ```
 *Figure 11*. Retrieving the first dog, ordered by primary key.
@@ -117,7 +117,7 @@ Optionally, you can pass an argument to get multiple objects back (e.g., `Dog.fi
 
 
 ### Release 7:  Finding a Dog by the Primary Key Value
-```
+```ruby
 Dog.find(3)
 ```
 *Figure 12*.  Retrieving the dog with id 3.
@@ -128,7 +128,7 @@ We can also specify an array of ID's, if we're looking for multiple records (e.g
 
 
 ### Release 8:  Finding a Dog by Attribute Values
-```
+```ruby
 Dog.find_by(name: "Jayda")
 ```
 *Figure 13*.  Retrieving the first dog found with the name Jayda.
@@ -139,7 +139,7 @@ If we're trying to find a single dog, but we don't know the value of its primary
 
 
 ### Release 9:  Method Chaining
-```
+```ruby
 Dog.order(name: :asc).where(age: 1).limit(1)
 ```
 *Figure 14*.  Chaining multiple methods together to specify which records to return.
