@@ -93,10 +93,16 @@ Dog.count
 
 In addition to retrieving records from the database, we can also ask an Active Record model to tell us how many records exist in the database with the `.count` method (see Figure 9).
 
- 
-- `Dog.pluck(:name, :age)`
 
-	`::pluck` allows us to retrieve just the values of specified fields.
+### Release 5:  Getting Specific Attributes
+```
+Dog.pluck(:name, :age)
+```
+*Figure 10.*  Retrieving the names and ages of the dogs.
+
+We don't always need to get all of the data for our dogs.  Perhaps we only need the names, or the license numbers.  `.pluck` allows us to retrieve just the values of specified fields (see Figure 10).
+
+In the methods that we looked at in earlier releases (e.g., `.all`), each record was mapped to an instance of the `Dog` class.  And, the instances were grouped in a collection that was like an array.  `.pluck` doesn't create `Dog` class instances; it just gives us the values we ask for.
 
   
 -  `Dog.first`
