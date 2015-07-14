@@ -67,9 +67,14 @@ Dog.where("age = ? and name like ?", 1, '%Te%')
 `.where` can also accept a string, as if we were writing part of the SQL query ourselves (see Figure 6).
 
 
-- `Dog.order(age: :desc)`
+### Release 2: Getting Dogs in a Certain Order
+```
+Dog.order(age: :desc)
+```
+*Figure 7*  Ordering dogs by age from oldest to youngest.
 
-  `::order` allows us to retrieve records ordered by specified attributes.
+Just as we might not always want to get all the dogs, sometimes we'll want to get dogs returned to us in a certain order: alphabetically by license, oldest to youngest, etc.  `.order` allows us to retrieve records ordered by specified attributes.
+
 
 - `Dog.limit(2)`
 
