@@ -149,16 +149,8 @@ We've been exploring each of these methods in isolation, but it's also possible 
 We just need to be careful because not all of the methods are chainable.  For example, `.pluck`.  We could tack a call to `.pluck` onto the end of the chain shown in Figure 14, and it would work just fine.  However, we couldn't stick `.pluck` into the middle of the chain.  Why not?  What does it return compared to the return values of the other methods?
 
 
-- `exit`
-
-  This will exit the console, just like IRB.  Alternatively, use *control + d*.
-
-
-### Release 1: `Person` and `Rating` classes
-
-We've explored some of the class methods provided for getting records out of the database.  To complete this challenge, define the `Person` and `Rating` classes, so that they are backed by the database—the `Dog` class if needed.
-
-Tests have been provided.  From the command line, run `bundle exec rake spec` to see the failing tests.  Make all the tests pass before submitting.
+### Release 10: `Person` and `Rating` classes
+We can now close the rake console.  We're going to turn our attention to defining two more Active Record models:  `Person` and `Rating`.  Create these classes, and set them up like our `Dog` class to be Active Record models.  Tests have been provided in `spec/models`.
 
 
 [RailsGuides Query Interface]: http://guides.rubyonrails.org/active_record_querying.html
