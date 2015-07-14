@@ -116,9 +116,15 @@ Dog.first
 Optionally, you can pass an argument to get multiple objects back (e.g., `Dog.first(2)`); this would return a collection.
 
 
-- `Dog.find(1)`
+### Release 7:  Finding a Dog by the Primary Key Value
+```
+Dog.find(3)
+```
+*Figure 12*.  Retrieving the dog with id 3.
 
-  `::find` allows us to search for records by primary key.  In our case, we're searching by `id`.  We can also specify an array of ID's, if we're looking for multiple records (e.g., `Dog.find [1, 2]`
+If we want to find a single dog, and we know the value of its primary key, we can retrieve that dog using the `.find` method (see Figure 12).  In our case, we're searching by `id`, since the `id` column is the primary key for the dogs table.
+
+We can also specify an array of ID's, if we're looking for multiple records (e.g., `Dog.find [1, 3]`.
 
 - `Dog.order(name: :asc).where(age: 1).limit(1)`
 
