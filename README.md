@@ -37,11 +37,14 @@ bundle exec rake console
 
 We're going to work with our `Dog` class from within the Rake console (i.e., IRB with our environment loaded).  Let's begin by opening the console (see Figure 1).  Once it's open, we can begin interacting with our models.  As we work through each release, we should execute the provided example code ourselves and look at the return values.
 
-- `Dog.all`
 
-  `::all` is a class method that returns all of the records in the `dogs` table as instances of the `Dog` class.  The individual instances are returned within a collection, an `ActiveRecord::Relation` object that acts much like an array.
+### Release 0: All of the Dogs
+```
+2.0.0-p598 :001 > Dog.all
+```
+*Figure 4*.  Retrieving all the dogs from the database.
 
-  Calling `Dog::all` tells Active Record to generate and execute a SQL query.  We can see the SQL that was executed in the console output: `SELECT "dogs".* FROM "dogs"`.
+Active Record provides a method for returning a collection of all the dogs in the database:  `.all` (see Figure 4).  `.all` is a class method that returns a collection of all of the records in the `dogs` table as instances of the `Dog` class.  Calling `Dog.all` tells Active Record to generate and execute a SQL query, and we can see the query in the console output: `SELECT "dogs".* FROM "dogs"`.  When the data is retrieved from the database, each record is mapped to an instance of the `Dog` class.  All of the instances are placed in a collection, an object that acts like an array.
 
 - `Dog.where(age: 1)`
 
