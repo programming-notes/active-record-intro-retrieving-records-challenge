@@ -35,7 +35,7 @@ bundle exec rake console
 ```
 *Figure 3*.  Executing the Rake task to open IRB with our environment loaded.
 
-We're going to work with our `Dog` class from within the Rake console (i.e., IRB with our environment loaded).  Let's begin by opening the console (see Figure 1).  Once it's open, we can begin interacting with our models.  As we work through each release, we should execute the provided example code ourselves and look at the return values.
+We're going to work with our `Dog` class from within the Rake console (i.e., IRB with our environment loaded).  Let's begin by opening the console (see Figure 3).  Once it's open, we can begin interacting with our models.  As we work through each release, we should execute the provided example code ourselves and look at the return values.
 
 
 ### Release 0: All of the Dogs
