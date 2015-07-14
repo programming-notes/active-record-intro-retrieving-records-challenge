@@ -17,7 +17,7 @@ Among the inherited methods, are class methods for retrieving data from the data
 
 
 ## Releases
-### Pre-release: Create, Migrate, and Seed the Database
+### Pre-release: Setup
 ```
 $ bundle install
 $ bundle exec rake db:create
@@ -30,14 +30,12 @@ Before we begin pulling data out of our database, we need to create our database
 
 When we run the Rake task to seed the database, we'll be inserting records into the dogs table.  The code that is executed is written in the file `db/seeds.rb`.  This file has been written to add three dogs to our database:  Jayda, Tenley, and Eleanor.
 
+```
+bundle exec rake console
+```
+*Figure 3*.  Executing the Rake task to open IRB with our environment loaded.
 
-### Release 0: Exploring
-
-We're going to work with our class from within the console.  To open the console, from the command line, run `bundle exec rake console`.
-
-This executes the `console` Rake task, opening IRB with our environment loaded.  We can interact with our models in the console.    
-
-From within the console run ...
+We're going to work with our `Dog` class from within the Rake console (i.e., IRB with our environment loaded).  Let's begin by opening the console (see Figure 1).  Once it's open, we can begin interacting with our models.  As we work through each release, we should execute the provided example code ourselves and look at the return values.
 
 - `Dog.all`
 
