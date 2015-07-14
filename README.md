@@ -98,17 +98,24 @@ In addition to retrieving records from the database, we can also ask an Active R
 ```
 Dog.pluck(:name, :age)
 ```
-*Figure 10.*  Retrieving the names and ages of the dogs.
+*Figure 10*.  Retrieving the names and ages of the dogs.
 
 We don't always need to get all of the data for our dogs.  Perhaps we only need the names, or the license numbers.  `.pluck` allows us to retrieve just the values of specified fields (see Figure 10).
 
 In the methods that we looked at in earlier releases (e.g., `.all`), each record was mapped to an instance of the `Dog` class.  And, the instances were grouped in a collection that was like an array.  `.pluck` doesn't create `Dog` class instances; it just gives us the values we ask for.
 
-  
--  `Dog.first`
 
-  `::first` is a class method that returns the first record in the `dogs` table, ordered by primary key.  Optionally, you can pass an argument to get multiple objects back (e.g., `Dog.first(5)`).
-  
+### Release 6:  Getting the First Dog
+```
+Dog.first
+```
+*Figure 11*. Retrieving the first dog, ordered by primary key.
+
+`.all`, `.where`, `.order`, etc. are methods that returned collections of objects.  Sometimes we are interested in getting just one dog—not a collection of dogs. `.first` is one such method (see Figure 11).  It returns the first record in the `dogs` table, ordered by primary key.  
+
+Optionally, you can pass an argument to get multiple objects back (e.g., `Dog.first(2)`); this would return a collection.
+
+
 - `Dog.find(1)`
 
   `::find` allows us to search for records by primary key.  In our case, we're searching by `id`.  We can also specify an array of ID's, if we're looking for multiple records (e.g., `Dog.find [1, 2]`
