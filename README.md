@@ -73,12 +73,17 @@ Dog.order(age: :desc)
 ```
 *Figure 7*  Ordering dogs by age from oldest to youngest.
 
-Just as we might not always want to get all the dogs, sometimes we'll want to get dogs returned to us in a certain order: alphabetically by license, oldest to youngest, etc.  `.order` allows us to retrieve records ordered by specified attributes.
+Just as we might not always want to get all the dogs, sometimes we'll want to get dogs returned to us in a certain order: alphabetically by license, oldest to youngest, etc.  `.order` allows us to retrieve records ordered by specified attributes (see Figure 7).
 
 
-- `Dog.limit(2)`
+### Release 3: Limiting the Number of Records Returned
+```
+Dog.limit(2)
+```
+*Figure 8*.  Limiting the number of records returned to 2.
 
-  `::limit` returns a maximum number of records equal to the number specified.
+Sometimes we only want to return a certain number of records.  When we visit a blog, we aren't shown every post ever written to the blog, but maybe only the most recent handful.  `.limit` allows us to specify a maximum number of records to return (see Figure 8).
+
 
 - `Dog.count`
 
