@@ -138,10 +138,16 @@ If we're trying to find a single dog, but we don't know the value of its primary
 `.find_by` is similar to `.where` in that we can pass it a have of attribute values that it should match.  However, `.where` returns a collection of all records that match the given conditions.  `.find_by` will return a single instance—even if there are multiple matches in the database.
 
 
+### Release 9:  Method Chaining
+```
+Dog.order(name: :asc).where(age: 1).limit(1)
+```
+*Figure 14*.  Chaining multiple methods together to specify which records to return.
 
-- `Dog.order(name: :asc).where(age: 1).limit(1)`
+We've been exploring each of these methods in isolation, but it's also possible to chain many of these methods together (see Figure 14).  Active Record will interpret the method chain into one SQL statement:  `SELECT  "dogs".* FROM "dogs"  WHERE "dogs"."age" = 1  ORDER BY "dogs"."name" ASC LIMIT 1`.
 
-  It's also possible to chain these methods together.  Active Records will interpret the method chain into one SQL statement:  `SELECT  "dogs".* FROM "dogs"  WHERE "dogs"."age" = 1  ORDER BY "dogs"."name" ASC LIMIT 1`
+We just need to be careful because not all of the methods are chainable.  For example, `.pluck`.  We could tack a call to `.pluck` onto the end of the chain shown in Figure 14, and it would work just fine.  However, we couldn't stick `.pluck` into the middle of the chain.  Why not?  What does it return compared to the return values of the other methods?
+
 
 - `exit`
 
