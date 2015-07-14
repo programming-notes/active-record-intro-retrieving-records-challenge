@@ -1,9 +1,7 @@
-require_relative '../../config/environment'
+require_relative '../spec_helper'
 
 describe "Person" do
-  describe "inheritance" do
-    it "inherits from ActiveRecord::Base" do
-      expect(Person < ActiveRecord::Base).to be true
-    end
+  it "is an Active Record model" do
+    expect(Person.new).to be_a_kind_of ActiveRecord::Base
   end
 end
