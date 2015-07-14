@@ -48,6 +48,8 @@ Active Record provides a method for returning a collection of all the dogs in th
 
 
 ### Release 1: Dogs Where a Condition is Met
+Sometimes we don't want all the records for a given model.  In our example, we won't always need to get all the dogs out of the database.  Maybe we only want the dogs with a specific name or dogs of a particular breed.
+
 ```ruby
 Dog.where(age: 1)
 ```
