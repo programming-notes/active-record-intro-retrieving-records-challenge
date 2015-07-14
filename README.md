@@ -39,22 +39,31 @@ We're going to work with our `Dog` class from within the Rake console (i.e., IRB
 
 
 ### Release 0: All of the Dogs
-```
-2.0.0-p598 :001 > Dog.all
+```ruby
+Dog.all
 ```
 *Figure 4*.  Retrieving all the dogs from the database.
 
 Active Record provides a method for returning a collection of all the dogs in the database:  `.all` (see Figure 4).  `.all` is a class method that returns a collection of all of the records in the `dogs` table as instances of the `Dog` class.  Calling `Dog.all` tells Active Record to generate and execute a SQL query, and we can see the query in the console output: `SELECT "dogs".* FROM "dogs"`.  When the data is retrieved from the database, each record is mapped to an instance of the `Dog` class.  All of the instances are placed in a collection, an object that acts like an array.
 
-- `Dog.where(age: 1)`
 
-  `::where` is a class method that can accept a hash argument that specifies the values of specific fields on the database table.  In our case, we want all the dogs whose age is 1.  `::where` will look for all records with values that match our conditions, so as with `::all`, the resulting `Dog` objects are returned in an `ActiveRecord::Relation`.
-  
-  The SQL executed was `SELECT "dogs".* FROM "dogs"  WHERE "dogs"."age" = 1`.
-  
--  `Dog.where("age = ? and name like ?", 1, '%Te%')`
+### Release 1: Dogs Where a Condition is Met
+```ruby
+Dog.where(age: 1)
+```
+*Figure 5*.  Passing conditions to `.where` as a hash.
 
-  `::where` can also accept string conditionals, as if you were writing the SQL yourself.
+`.where` is a class method that can accept a hash argument that specifies the values of specific fields on the database table (see Figure 5).  In this case, we want all the dogs whose age is 1.  The SQL executed is equivalent to `SELECT "dogs".* FROM "dogs"  WHERE "dogs"."age" = 1`.
+
+The dogs table will be searched for any records that match our conditions.  The assumption is that there could be more than one, so the `Dog` objects are returned in a collection—even if there is only one match.
+  
+```
+Dog.where("age = ? and name like ?", 1, '%Te%')
+```
+*Figure 6*.  Passing conditions to `.where` as a string.
+
+`.where` can also accept a string, as if we were writing part of the SQL query ourselves (see Figure 6).
+
 
 - `Dog.order(age: :desc)`
 
