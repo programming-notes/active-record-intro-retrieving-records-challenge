@@ -153,5 +153,9 @@ We just need to be careful because not all of the methods are chainable.  For ex
 We can now close the rake console.  We're going to turn our attention to defining two more Active Record models:  `Person` and `Rating`.  Create these classes, and set them up like our `Dog` class to be Active Record models.  Tests have been provided in `spec/models`.
 
 
+## Conclusion
+We've now been exposed to how we can use Active Record to pull data out of our database.  Active Record provides a powerful interface for interacting with our database, and we're just beginning to explore it.  As we move forward through Dev Bootcamp, we'll become more and more comfortable with the methods we explored in this challenge and be exposed to new methods.
+
+
 [RailsGuides Query Interface]: http://guides.rubyonrails.org/active_record_querying.html
 
