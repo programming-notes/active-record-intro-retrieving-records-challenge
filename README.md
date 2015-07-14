@@ -135,7 +135,7 @@ Dog.find_by(name: "Jayda")
 
 If we're trying to find a single dog, but we don't know the value of its primary key, we can search for it by an attribute whose value we do know.  For example, we can search for a dog with specific name (see Figure 13) using the `.find_by` method.
 
-`.find_by` is similar to `.where` in that we can pass it a have of attribute values that it should match.  However, `.where` returns a collection of all records that match the given conditions.  `.find_by` will return a single instance—even if there are multiple matches in the database.
+`.find_by` is similar to `.where` in that we can pass it a hash of attribute values that it should match.  However, `.where` returns a collection of all records that match the given conditions.  `.find_by` will return a single instance—even if there are multiple matches in the database.
 
 
 ### Release 9:  Method Chaining
