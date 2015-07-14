@@ -15,17 +15,21 @@ As we can see, the class itself is empty; we define the class, specify that it i
 
 Among the inherited methods, are class methods for retrieving data from the database.  We ask the classes to handle building instances of themselves based on the data in the database—for example, the class `Dog` builds dog instances based on the data in the dogs table.  We are going to explore those some of these class methods in this challenge.
 
+
 ## Releases
-
 ### Pre-release: Create, Migrate, and Seed the Database
+```
+$ bundle install
+$ bundle exec rake db:create
+$ bundle exec rake db:migrate
+$ bundle exec rake db:seed
+```
+*Figure 2*.  Setting up and seeding the database.
 
-1. Run Bundler to ensure that the proper gems have been installed.
+Before we begin pulling data out of our database, we need to create our database and seed it with data.  All the files necessary for this are provided:  the migrations and the seeds file.  We simply need to run the Rake tasks (see Figure 2).
 
-2. Use the provided Rake task to create the database.
+When we run the Rake task to seed the database, we'll be inserting records into the dogs table.  The code that is executed is written in the file `db/seeds.rb`.  This file has been written to add three dogs to our database:  Jayda, Tenley, and Eleanor.
 
-3. Use the provided Rake task to migrate the database.
-
-4. Use the provided Rake task to seed the database.  Run `bundle exec rake db:seed`.  This will execute the code written in `db/seeds.rb`.  This file has been written to add three dogs to our database:  Tenley, Jayda, and Eleanor.
 
 ### Release 0: Exploring
 
