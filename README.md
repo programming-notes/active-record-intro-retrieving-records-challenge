@@ -1,19 +1,19 @@
-#Active Record Intro:  Retreiving Records
+#Active Record Intro:  Retrieving Records
 
 ## Summary
-
-In this challenge, we'll continue working with the database schema that we've built over the previous Active Record Intro challenges.  We'll switch our focus from writing migrations to edit our database schema to working with our models.  Specifically, how to pull records from the database.
+In this challenge, we will begin to explore Active Record models, the classes backed up by our database.  We'll learn about some of the different methods available for getting records out of our database.  We'll explore both the methods that we'll rely on day-in-and-day-out as well as some helpful options that we'll use less regularly.  For a more comprehensive list of options, we can always reference the [RailsGuides document on the Active Record Query Interface][RailsGuides Query Interface].  
 
 ```ruby
 class Dog < ActiveRecord::Base
 end
 ```
+*Figure 1.*  Code for the class `Dog`.
 
-*Figure 1.*  Code for `Dog` class.
+We'll continue working with the database schema that we built over the previous Active Record Intro challenges.  We'll switch our focus from the database schema (i.e., migrations) to working with our models.  We'll be working with the class `Dog` throughout the challenge (see Figure 1).  The class is defined in the file `app/models/dog.rb`.
 
-We have a pre-written class that we'll work with:  `Dog`.  The class is defined in the file `app/models/dog.rb`, whose code is shown in Figure 1.
+As we can see, the class itself is empty; we define the class, specify that it inherits from `ActiveRecord::Base`, and then close it.  There are no methods defined within the class itself.  All the methods we need for interacting with the database are inherited.
 
-Class `Dog` is empty.  There are no methods defined within the class itself; however, it inherits a number of class methods from `ActiveRecord::Base`.  Among these inherited methods, are class methods for retreiving data from the database.  We are going to explore those some of those methods in this challenge.
+Among the inherited methods, are class methods for retrieving data from the database.  We ask the classes to handle building instances of themselves based on the data in the database—for example, the class `Dog` builds dog instances based on the data in the dogs table.  We are going to explore those some of these class methods in this challenge.
 
 ## Releases
 
@@ -31,7 +31,7 @@ Class `Dog` is empty.  There are no methods defined within the class itself; how
 
 We're going to work with our class from within the console.  To open the console, from the command line, run `bundle exec rake console`.
 
-This executes the `console` Rake task, opening IRB with our environment loaded.  We can interact with our models in the console.  We can select records from the database, insert new records, destroy records, etc.  We're going to sample the class methods for retreiving records that our `Dog` class inherits from ActiveRecord::Base.  For a more comprehensive list of options, see the [RailsGuides](http://guides.rubyonrails.org/active_record_querying.html).  
+This executes the `console` Rake task, opening IRB with our environment loaded.  We can interact with our models in the console.    
 
 From within the console run ...
 
@@ -90,4 +90,7 @@ From within the console run ...
 We've explored some of the class methods provided for getting records out of the database.  To complete this challenge, define the `Person` and `Rating` classes, so that they are backed by the database—the `Dog` class if needed.
 
 Tests have been provided.  From the command line, run `bundle exec rake spec` to see the failing tests.  Make all the tests pass before submitting.
+
+
+[RailsGuides Query Interface]: http://guides.rubyonrails.org/active_record_querying.html
 
