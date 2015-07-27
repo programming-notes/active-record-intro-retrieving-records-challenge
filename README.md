@@ -126,6 +126,8 @@ If we want to find a single dog, and we know the value of its primary key, we ca
 
 We can also specify an array of ID's, if we're looking for multiple records (e.g., `Dog.find [1, 3]`.
 
+What happens if we try to find a dog by an id that is not in the database?  An error is raised.  In the console, this won't affect us too much, but if we were running an application, that error could be a problem.  We need to be aware that `.find` could raise an error.
+
 
 ### Release 8:  Finding a Dog by Attribute Values
 ```ruby
@@ -136,6 +138,8 @@ Dog.find_by(name: "Jayda")
 If we're trying to find a single dog, but we don't know the value of its primary key, we can search for it by an attribute whose value we do know.  For example, we can search for a dog with specific name (see Figure 13) using the `.find_by` method.
 
 `.find_by` is similar to `.where` in that we can pass it a hash of attribute values that it should match.  However, `.where` returns a collection of all records that match the given conditions.  `.find_by` will return a single instance—even if there are multiple matches in the database.
+
+What happens if we try to find a dog by an attribute, but there are no matching records in the database?  Remember that `.find` raises an error.  How does `.find_by` behave?
 
 
 ### Release 9:  Method Chaining
