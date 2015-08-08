@@ -71,7 +71,7 @@ Dog.where("age = ? and name like ?", 1, '%Te%')
 ```ruby
 Dog.order(age: :desc)
 ```
-*Figure 7.*  Ordering dogs by age from oldest to youngest.
+*Figure 7*.  Ordering dogs by age from oldest to youngest.
 
 Just as we might not always want to get all the dogs, sometimes we'll want to get dogs returned to us in a certain order: alphabetically by license, oldest to youngest, etc.  `.order` allows us to retrieve records ordered by specified attributes (see Figure 7).
 
