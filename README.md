@@ -1,7 +1,7 @@
 #Active Record Intro:  Retrieving Records
 
 ## Summary
-In this challenge, we will begin to explore Active Record models, the classes backed up by our database.  We'll learn about some of the different methods available for getting records out of our database.  We'll explore both the methods that we'll rely on day-in-and-day-out as well as some helpful options that we'll use less regularly.  For a more comprehensive list of options, we can always reference the [RailsGuides document on the Active Record Query Interface][RailsGuides Query Interface].  
+In this challenge, we will begin to explore Active Record models, the classes backed up by our database.  We'll learn about some of the different methods available for getting records out of our database.  We'll explore both the methods that we'll rely on day-in-and-day-out as well as some helpful options that we'll use less regularly.  For a more comprehensive list of options, we can always reference the [RailsGuides document on the Active Record Query Interface][RailsGuides Query Interface].
 
 ```ruby
 class Dog < ActiveRecord::Base
@@ -58,7 +58,7 @@ Dog.where(age: 1)
 `.where` is a class method that can accept a hash argument that specifies the values of specific fields on the database table (see Figure 5).  In this case, we want all the dogs whose age is 1.  The SQL executed is equivalent to `SELECT "dogs".* FROM "dogs"  WHERE "dogs"."age" = 1`.
 
 The dogs table will be searched for any records that match our conditions.  The assumption is that there could be more than one, so the `Dog` objects are returned in a collection—even if there is only one match.
-  
+
 ```ruby
 Dog.where("age = ? and name like ?", 1, '%Te%')
 ```
@@ -71,7 +71,7 @@ Dog.where("age = ? and name like ?", 1, '%Te%')
 ```ruby
 Dog.order(age: :desc)
 ```
-*Figure 7*  Ordering dogs by age from oldest to youngest.
+*Figure 7*.  Ordering dogs by age from oldest to youngest.
 
 Just as we might not always want to get all the dogs, sometimes we'll want to get dogs returned to us in a certain order: alphabetically by license, oldest to youngest, etc.  `.order` allows us to retrieve records ordered by specified attributes (see Figure 7).
 
@@ -111,7 +111,7 @@ Dog.first
 ```
 *Figure 11*. Retrieving the first dog, ordered by primary key.
 
-`.all`, `.where`, `.order`, etc. are methods that returned collections of objects.  Sometimes we are interested in getting just one dog—not a collection of dogs. `.first` is one such method (see Figure 11).  It returns the first record in the `dogs` table, ordered by primary key.  
+`.all`, `.where`, `.order`, etc. are methods that returned collections of objects.  Sometimes we are interested in getting just one dog—not a collection of dogs. `.first` is one such method (see Figure 11).  It returns the first record in the `dogs` table, ordered by primary key.
 
 Optionally, you can pass an argument to get multiple objects back (e.g., `Dog.first(2)`); this would return a collection.
 
